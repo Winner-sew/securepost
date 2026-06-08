@@ -1,0 +1,611 @@
+/* ==================================
+   SECUREPOST - Feuille de style
+   Fait par : Erwin Christopher Siassia
+   Date : Juin 2026
+   Note : j'ai essayé de faire quelque chose
+   de propre mais c'est pas parfait lol
+   ================================== */
+
+/* importation de la police depuis google fonts
+   j'ai choisi Roboto car c'est lisible */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* reset basique que j'ai appris en cours */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* mes variables de couleurs principales
+   TODO: demander au prof si c'est la bonne façon */
+:root {
+    /* couleurs imposées par le cahier des charges */
+    --couleur-bleu: #1a56db;       /* enquête en cours */
+    --couleur-orange: #f97316;     /* transmis procureur */
+    --couleur-rouge: #ef4444;      /* critique/crime */
+    --couleur-gris: #6b7280;       /* classé sans suite */
+
+    /* couleurs de mon interface */
+    --vert-congo: #009a44;         /* vert du drapeau Congo */
+    --jaune-congo: #fbde4a;        /* jaune du drapeau */
+    --fond-page: #f0f2f5;
+    --blanc: #ffffff;
+    --texte-noir: #1a1a2e;
+    --sidebar-fond: #1a1a2e;       /* fond sombre pour la sidebar */
+    --sidebar-texte: #ffffff;
+}
+
+/* style general du body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--fond-page);
+    color: var(--texte-noir);
+    /* j'ai mis min-height pour que la page prenne tout l'écran */
+    min-height: 100vh;
+}
+
+/* ==============================
+   PAGE DE CONNEXION
+   c'est la première page que
+   l'agent voit quand il ouvre
+   ============================== */
+.login-page {
+    min-height: 100vh;
+    /* dégradé avec les couleurs Congo */
+    background: linear-gradient(160deg, #1a1a2e 0%, #009a44 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-card {
+    background: var(--blanc);
+    border-radius: 8px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    /* ombre pour que ça ressemble à une carte */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    /* petite bordure verte en haut */
+    border-top: 4px solid var(--vert-congo);
+}
+
+.login-logo {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+/* le badge avec l'icone police */
+.login-logo .badge {
+    background: var(--vert-congo);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    /* j'ai mis border-radius: 50% pour faire un cercle */
+}
+
+.login-logo .badge img {
+    width: 36px;
+    height: 36px;
+    filter: brightness(0) invert(1);
+}
+
+.login-logo h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--texte-noir);
+    letter-spacing: 1px;
+}
+
+.login-logo p {
+    color: var(--couleur-gris);
+    font-size: 12px;
+    margin-top: 4px;
+    /* texte en majuscule pour faire officiel */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ligne verte decorative sous le titre */
+.login-logo .ligne-deco {
+    width: 40px;
+    height: 3px;
+    background: var(--vert-congo);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ==============================
+   FORMULAIRES
+   j'utilise les memes styles
+   partout pour etre coherent
+   ============================== */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 5px;
+    /* petite etoile rouge pour les champs obligatoires */
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: var(--texte-noir);
+    background: #fafafa;
+    transition: border-color 0.2s;
+    outline: none;
+}
+
+/* quand on clique sur un champ */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--vert-congo);
+    background: var(--blanc);
+}
+
+/* ==============================
+   BOUTONS
+   ============================== */
+.btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.88;
+}
+
+.btn-primary {
+    background: var(--vert-congo);
+    color: white;
+    width: 100%;
+}
+
+.btn-danger {
+    background: var(--couleur-rouge);
+    color: white;
+}
+
+/* ==============================
+   ALERTES / MESSAGES
+   ============================== */
+.alert {
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 14px;
+    display: none;
+    /* display none par defaut, on l'affiche avec JS */
+}
+
+.alert-error {
+    background: #fee2e2;
+    color: #dc2626;
+    border-left: 3px solid #dc2626;
+}
+
+.alert-success {
+    background: #dcfce7;
+    color: #16a34a;
+    border-left: 3px solid #16a34a;
+}
+
+/* ==============================
+   LAYOUT PRINCIPAL
+   structure de la page avec
+   sidebar a gauche et contenu
+   a droite
+   ============================== */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ==============================
+   SIDEBAR (menu lateral)
+   ============================== */
+.sidebar {
+    width: 240px;
+    background: var(--sidebar-fond);
+    color: var(--sidebar-texte);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    /* z-index pour que la sidebar soit au dessus */
+    z-index: 100;
+    border-right: 3px solid var(--vert-congo);
+}
+
+.sidebar-header {
+    padding: 20px 16px;
+    background: rgba(0, 154, 68, 0.15);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.sidebar-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-header .logo img {
+    width: 32px;
+    height: 32px;
+}
+
+.sidebar-header .logo h2 {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.sidebar-header .logo p {
+    font-size: 10px;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* barre coloree sous le logo */
+.sidebar-header .barre-congo {
+    display: flex;
+    height: 3px;
+    margin-top: 12px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.sidebar-header .barre-congo span:nth-child(1) { background: #009a44; flex: 1; }
+.sidebar-header .barre-congo span:nth-child(2) { background: #fbde4a; flex: 1; }
+.sidebar-header .barre-congo span:nth-child(3) { background: #dc241f; flex: 1; }
+
+.sidebar-nav {
+    padding: 12px 0;
+    flex: 1;
+}
+
+/* chaque lien du menu */
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 16px;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    transition: all 0.15s;
+    border-left: 3px solid transparent;
+}
+
+.nav-item:hover {
+    background: rgba(255,255,255,0.07);
+    color: white;
+}
+
+/* lien actif = page actuelle */
+.nav-item.active {
+    background: rgba(0, 154, 68, 0.18);
+    color: white;
+    border-left: 3px solid var(--vert-congo);
+    font-weight: 500;
+}
+
+.nav-item img {
+    width: 18px;
+    height: 18px;
+    opacity: 0.7;
+    filter: brightness(0) invert(1);
+}
+
+.nav-item.active img {
+    opacity: 1;
+}
+
+.sidebar-footer {
+    padding: 14px 16px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 10px;
+}
+
+/* cercle avec les initiales de l'agent */
+.user-avatar {
+    width: 34px;
+    height: 34px;
+    background: var(--vert-congo);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.user-name {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.user-role {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    text-transform: capitalize;
+}
+
+.btn-deconnexion {
+    width: 100%;
+    padding: 8px;
+    background: rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    transition: background 0.2s;
+}
+
+.btn-deconnexion:hover {
+    background: rgba(220, 36, 31, 0.3);
+    color: white;
+}
+
+/* ==============================
+   CONTENU PRINCIPAL
+   ============================== */
+.main-content {
+    margin-left: 240px;
+    flex: 1;
+    padding: 28px;
+}
+
+/* header de chaque page */
+.page-header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.page-header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--texte-noir);
+}
+
+.page-header p {
+    color: var(--couleur-gris);
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+/* ==============================
+   CARTES STATISTIQUES
+   ============================== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    background: var(--blanc);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    border-left: 3px solid var(--vert-congo);
+}
+
+.stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stat-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+/* couleurs de fond des icones selon le type */
+.stat-icon.bleu { background: #dbeafe; }
+.stat-icon.rouge { background: #fee2e2; }
+.stat-icon.orange { background: #fff7ed; }
+.stat-icon.vert { background: #dcfce7; }
+
+.stat-info h3 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--texte-noir);
+}
+
+.stat-info p {
+    font-size: 12px;
+    color: var(--couleur-gris);
+    margin-top: 2px;
+}
+
+/* ==============================
+   TABLEAUX
+   ============================== */
+.table-container {
+    background: var(--blanc);
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.table-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    background: #fafafa;
+}
+
+.table-header h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--texte-noir);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--couleur-gris);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+td {
+    padding: 14px 20px;
+    font-size: 13px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #374151;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: #f9fafb;
+}
+
+/* ==============================
+   BADGES DE STATUT ET GRAVITE
+   couleurs imposees par le prof
+   ============================== */
+.badge {
+    padding: 3px 9px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* statuts */
+.badge-bleu   { background: #dbeafe; color: #1d4ed8; }
+.badge-orange { background: #ffedd5; color: #c2410c; }
+.badge-gris   { background: #f3f4f6; color: #4b5563; }
+.badge-rouge  { background: #fee2e2; color: #b91c1c; }
+
+/* ==============================
+   BARRE DE RECHERCHE
+   ============================== */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f3f4f6;
+    border-radius: 6px;
+    padding: 7px 12px;
+    flex: 1;
+    max-width: 280px;
+    border: 1.5px solid #e5e7eb;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 13px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ==============================
+   RESPONSIVE MOBILE
+   pour que ca marche sur tablette
+   TODO : tester sur telephone
+   ============================== */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 16px;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+/* ==============================
+   HEADER DES PAGES
+   fond dégradé drapeau Congo
+   ============================== */
+.page-header {
+    background: linear-gradient(135deg, #005a27 0%, #8a7200 50%, #8b0000 100%);
+    padding: 24px 28px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    border-bottom: none;
+}
+
+.page-header h1 {
+    color: white;
+    font-size: 24px;
+}
+
+.page-header p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13px;
+    margin-top: 4px;
+}

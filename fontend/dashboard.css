@@ -1,0 +1,79 @@
+/* ============================================
+   SECUREPOST - Styles Tableau de Bord
+   Auteur : Erwin Christopher Siassia
+   Date : Juin 2026
+   ============================================ */
+
+/* grille des cartes statistiques */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+/* carte individuelle de statistique */
+.stat-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    border-left: 3px solid #009a44;
+}
+
+/* icone dans la carte */
+.stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stat-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+/* couleurs de fond des icones */
+.stat-icon.bleu   { background: #dbeafe; }
+.stat-icon.rouge  { background: #fee2e2; }
+.stat-icon.orange { background: #fff7ed; }
+.stat-icon.vert   { background: #dcfce7; }
+
+/* chiffre et texte dans la carte */
+.stat-info h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.stat-info p {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+/* grille pour les deux tableaux cote a cote
+   top quartiers et par type d'acte */
+.grille-tableaux {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+/* responsive - sur mobile les cartes passent en 2 colonnes */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .grille-tableaux {
+        grid-template-columns: 1fr;
+    }
+}

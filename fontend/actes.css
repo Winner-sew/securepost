@@ -1,0 +1,157 @@
+/* ============================================
+   SECUREPOST - Styles Registre des Actes
+   Auteur : Erwin Christopher Siassia
+   Date : Juin 2026
+   ============================================ */
+
+/* barre de filtres en haut */
+.filtres-container {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* grille des filtres */
+.filtres-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    gap: 12px;
+    align-items: end;
+}
+
+/* boutons voir et epingler */
+.btn-voir {
+    padding: 4px 10px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.btn-voir:hover {
+    opacity: 0.8;
+}
+
+.btn-epingler {
+    padding: 4px 10px;
+    background: #fff7ed;
+    color: #c2410c;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.btn-epingler:hover {
+    opacity: 0.8;
+}
+
+/* cellule actions dans le tableau */
+.actions-cell {
+    display: flex;
+    gap: 6px;
+}
+
+/* ==============================
+   MODAL DETAIL ACTE
+   ============================== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.actif {
+    display: flex;
+}
+
+.modal-carte {
+    background: white;
+    border-radius: 12px;
+    padding: 32px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-entete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+.modal-entete h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.btn-fermer-modal {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #6b7280;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-fermer-modal:hover {
+    color: #1a1a2e;
+}
+
+.modal-grille {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.modal-champ {
+    font-size: 13px;
+    color: #374151;
+}
+
+.modal-champ strong {
+    color: #1a1a2e;
+}
+
+.modal-separateur {
+    border: none;
+    border-top: 1px solid #f3f4f6;
+    margin: 16px 0;
+}
+
+.modal-contenu {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .filtres-grid {
+        grid-template-columns: 1fr;
+    }
+}

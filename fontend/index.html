@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurePost - Connexion</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="login-page">
+        <div class="login-card">
+
+            <div class="login-logo">
+                <div class="badge-logo">
+                    <img src="./Images/logo.png" alt="logo SecurePost">
+                </div>
+                <h1>SecurePost</h1>
+                <p>Commissariat de Pointe-Noire</p>
+                <div class="ligne-deco"></div>
+            </div>
+
+            <div class="alert alert-error" id="alertErreur">
+                Email ou mot de passe incorrect
+            </div>
+
+            <div class="form-group">
+                <label>Adresse Email</label>
+                <input type="email" id="email" placeholder="agent@securepost.cg" value="jb.moukala@securepost.cg"/>
+            </div>
+
+            <div class="form-group">
+                <label>Mot de passe</label>
+                <input type="password" id="motDePasse" placeholder="••••••••" value="password123"/>
+            </div>
+
+            <button class="btn-connexion" id="btnConnecter">
+                Se connecter
+            </button>
+
+            <p class="login-footer-text">
+                Accès réservé aux fonctionnaires de police autorisés
+            </p>
+
+        </div>
+    </div>
+
+    <!-- script separe dans son propre fichier -->
+    <script src="index.js"></script>
+
+</body>
+</html>

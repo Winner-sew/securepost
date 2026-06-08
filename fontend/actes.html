@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurePost - Registre des Actes</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="actes.css">
+</head>
+<body>
+<div class="app-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="./Images/logo.png" alt="logo">
+                <div>
+                    <h2>SecurePost</h2>
+                    <p>Commissariat PNR</p>
+                </div>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <img src="./Images/logo.png" alt=""> Tableau de Bord
+            </a>
+            <a href="actes.html" class="nav-item active">
+                <img src="./Images/dossier.png" alt=""> Registre des Actes
+            </a>
+            <a href="formulaire.html" class="nav-item">
+                <img src="./Images/crayon.png" alt=""> Nouvel Acte
+            </a>
+            <a href="prioritaires.html" class="nav-item">
+                <img src="./Images/etoile.png" alt=""> Affaires Prioritaires
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar" id="userInitiales">?</div>
+                <div>
+                    <div class="user-name" id="userName">-</div>
+                    <div class="user-role" id="userRole">-</div>
+                </div>
+            </div>
+            <button class="btn-deconnexion" onclick="seDeconnecter()">
+                Se déconnecter
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <div class="page-header">
+            <h1>Registre des Actes</h1>
+            <p>Toutes les mains courantes, plaintes et PV enregistrés</p>
+        </div>
+
+        <div class="filtres-container">
+            <div class="filtres-grid">
+                <div class="form-group">
+                    <label>Recherche</label>
+                    <input type="text" id="recherche" placeholder="Numéro, nom, quartier..." oninput="filtrer()"/>
+                </div>
+                <div class="form-group">
+                    <label>Type</label>
+                    <select id="filtreType" onchange="filtrer()">
+                        <option value="">Tous</option>
+                        <option value="main_courante">Main Courante</option>
+                        <option value="plainte">Plainte</option>
+                        <option value="pv_audition">PV Audition</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Statut</label>
+                    <select id="filtreStatut" onchange="filtrer()">
+                        <option value="">Tous</option>
+                        <option value="en_cours">En cours</option>
+                        <option value="transmis_procureur">Transmis</option>
+                        <option value="classe_sans_suite">Classé</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Gravité</label>
+                    <select id="filtreGravite" onchange="filtrer()">
+                        <option value="">Toutes</option>
+                        <option value="faible">Faible</option>
+                        <option value="moyen">Moyen</option>
+                        <option value="critique">Critique</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>&nbsp;</label>
+                    <button class="btn btn-primary" onclick="reinitialiser()">Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <div class="table-header">
+                <h2>Liste des Actes</h2>
+                <a href="formulaire.html" class="btn btn-primary">+ Nouvel Acte</a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Numéro</th>
+                        <th>Type</th>
+                        <th>Quartier</th>
+                        <th>Déclarant</th>
+                        <th>Gravité</th>
+                        <th>Statut</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tableauActes">
+                    <tr><td colspan="8">Chargement...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+</div>
+
+<!-- MODAL DETAIL -->
+<div class="modal-overlay" id="modal">
+    <div class="modal-carte">
+        <div class="modal-entete">
+            <h2 id="modalTitre">Détail de l'acte</h2>
+            <button class="btn-fermer-modal" onclick="fermerModal()">✕</button>
+        </div>
+        <div id="modalContenu"></div>
+    </div>
+</div>
+
+<script src="actes.js"></script>
+</body>
+</html>

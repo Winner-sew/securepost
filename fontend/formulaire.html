@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurePost - Nouvel Acte</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="formulaire.css">
+</head>
+<body>
+<div class="app-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="./Images/logo.png" alt="logo">
+                <div>
+                    <h2>SecurePost</h2>
+                    <p>Commissariat PNR</p>
+                </div>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <img src="./Images/logo.png" alt=""> Tableau de Bord
+            </a>
+            <a href="actes.html" class="nav-item">
+                <img src="./Images/dossier.png" alt=""> Registre des Actes
+            </a>
+            <a href="formulaire.html" class="nav-item active">
+                <img src="./Images/crayon.png" alt=""> Nouvel Acte
+            </a>
+            <a href="prioritaires.html" class="nav-item">
+                <img src="./Images/etoile.png" alt=""> Affaires Prioritaires
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar" id="userInitiales">?</div>
+                <div>
+                    <div class="user-name" id="userName">-</div>
+                    <div class="user-role" id="userRole">-</div>
+                </div>
+            </div>
+            <button class="btn-deconnexion" onclick="seDeconnecter()">
+                Se déconnecter
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <div class="page-header">
+            <h1>Nouvel Acte</h1>
+            <p>Enregistrement d'une main courante, plainte ou PV d'audition</p>
+        </div>
+
+        <div class="alert alert-error" id="alertErreur"></div>
+        <div class="alert alert-success" id="alertSucces"></div>
+
+        <div class="formulaire-carte">
+
+            <h3 class="section-titre">Informations Générales</h3>
+            <div class="champs-grille">
+                <div class="form-group">
+                    <label>Type d'acte *</label>
+                    <select id="typeActe" required>
+                        <option value="">-- Sélectionner --</option>
+                        <option value="main_courante">Main Courante</option>
+                        <option value="plainte">Plainte</option>
+                        <option value="pv_audition">PV d'Audition</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Niveau de gravité *</label>
+                    <select id="gravite" required>
+                        <option value="faible">Faible</option>
+                        <option value="moyen">Moyen</option>
+                        <option value="critique">Critique / Crime</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Date et heure des faits *</label>
+                    <input type="datetime-local" id="dateFaits" required/>
+                </div>
+                <div class="form-group">
+                    <label>Quartier / Arrondissement *</label>
+                    <select id="quartier" required>
+                        <option value="">-- Sélectionner --</option>
+                        <option value="Centre-ville">Centre-ville</option>
+                        <option value="Tié-Tié">Tié-Tié</option>
+                        <option value="Mpaka">Mpaka</option>
+                        <option value="Loandjili">Loandjili</option>
+                        <option value="Vindoulou">Vindoulou</option>
+                        <option value="Mongo-Mpoukou">Mongo-Mpoukou</option>
+                        <option value="Ngoyo">Ngoyo</option>
+                        <option value="Tchiniambi">Tchiniambi</option>
+                    </select>
+                </div>
+            </div>
+
+            <h3 class="section-titre">Identité du Déclarant</h3>
+            <div class="champs-grille">
+                <div class="form-group">
+                    <label>Nom du déclarant</label>
+                    <input type="text" id="declarantNom" placeholder="Nom de famille"/>
+                </div>
+                <div class="form-group">
+                    <label>Prénom du déclarant</label>
+                    <input type="text" id="declarantPrenom" placeholder="Prénom"/>
+                </div>
+            </div>
+
+            <h3 class="section-titre">Identité de la Victime</h3>
+            <div class="champs-grille">
+                <div class="form-group">
+                    <label>Nom de la victime</label>
+                    <input type="text" id="victimeNom" placeholder="Nom de famille"/>
+                </div>
+                <div class="form-group">
+                    <label>Prénom de la victime</label>
+                    <input type="text" id="victimePrenom" placeholder="Prénom"/>
+                </div>
+            </div>
+
+            <h3 class="section-titre">Identité du Suspect</h3>
+            <div class="champs-grille">
+                <div class="form-group">
+                    <label>Nom du suspect</label>
+                    <input type="text" id="suspectNom" placeholder="Nom de famille"/>
+                </div>
+                <div class="form-group">
+                    <label>Prénom du suspect</label>
+                    <input type="text" id="suspectPrenom" placeholder="Prénom"/>
+                </div>
+            </div>
+
+            <h3 class="section-titre">Déclaration</h3>
+            <div class="form-group">
+                <label>Contenu détaillé *</label>
+                <textarea id="contenu" rows="6" placeholder="Décrivez les faits de manière précise..."></textarea>
+            </div>
+
+            <div class="formulaire-actions">
+                <a href="actes.html" class="btn-annuler">Annuler</a>
+                <button class="btn-soumettre" id="btnSoumettre" onclick="soumettre()">
+                    Enregistrer l'Acte
+                </button>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<script src="formulaire.js"></script>
+</body>
+</html>

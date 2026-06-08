@@ -1,0 +1,159 @@
+/* ============================================
+   SECUREPOST - Styles Affaires Prioritaires
+   Auteur : Erwin Christopher Siassia
+   Date : Juin 2026
+   ============================================ */
+
+/* compteurs en haut */
+.stats-prioritaires {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-card-prioritaire {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    border-left: 3px solid #009a44;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stat-card-prioritaire span {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.stat-card-prioritaire p {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.stat-card-prioritaire.critique {
+    border-left-color: #ef4444;
+}
+
+.stat-card-prioritaire.critique span {
+    color: #ef4444;
+}
+
+/* liste des affaires */
+.prioritaires-liste {
+    display: grid;
+    gap: 16px;
+}
+
+/* carte individuelle */
+.prioritaire-carte {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    border-left: 4px solid #6b7280;
+}
+
+/* entete de la carte */
+.prioritaire-entete {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.prioritaire-numero {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.prioritaire-type {
+    font-size: 13px;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+/* badges et bouton retirer */
+.prioritaire-badges {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* bouton retirer */
+.btn-retirer {
+    padding: 4px 10px;
+    background: #fee2e2;
+    color: #b91c1c;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.btn-retirer:hover {
+    opacity: 0.8;
+}
+
+/* contenu de l'acte */
+.prioritaire-contenu {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+/* infos en bas de la carte */
+.prioritaire-infos {
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+    color: #6b7280;
+    flex-wrap: wrap;
+}
+
+/* message quand liste vide */
+.message-vide {
+    display: none;
+    background: white;
+    border-radius: 8px;
+    padding: 60px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.message-vide-icone {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.message-vide h3 {
+    color: #374151;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.message-vide p {
+    color: #9ca3af;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .stats-prioritaires {
+        grid-template-columns: 1fr;
+    }
+    .prioritaire-entete {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

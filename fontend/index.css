@@ -1,0 +1,105 @@
+/* ============================================
+   SECUREPOST - Styles Page de Connexion
+   Auteur : Erwin Christopher Siassia
+   Date : Juin 2026
+   ============================================ */
+
+/* fond de la page connexion
+   j'ai utilisé un dégradé vert congo */
+.login-page {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #1a1a2e 0%, #009a44 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* la carte blanche au centre */
+.login-card {
+    background: white;
+    border-radius: 8px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    border-top: 4px solid #009a44;
+}
+
+/* partie logo en haut */
+.login-logo {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+/* cercle vert avec l'icone police */
+.login-logo .badge-logo {
+    background: #009a44;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+}
+
+.login-logo .badge-logo img {
+    width: 36px;
+    height: 36px;
+    filter: brightness(0) invert(1);
+}
+
+.login-logo h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a2e;
+    letter-spacing: 1px;
+}
+
+.login-logo p {
+    color: #6b7280;
+    font-size: 12px;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* petite ligne décorative sous le titre */
+.login-logo .ligne-deco {
+    width: 40px;
+    height: 3px;
+    background: #009a44;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* bouton connexion pleine largeur */
+.btn-connexion {
+    width: 100%;
+    padding: 12px;
+    background: #009a44;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    transition: opacity 0.2s;
+    margin-top: 8px;
+}
+
+.btn-connexion:hover {
+    opacity: 0.88;
+}
+
+/* texte en bas de la carte */
+.login-footer-text {
+    text-align: center;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
