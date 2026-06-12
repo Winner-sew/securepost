@@ -20,20 +20,31 @@
                 </div>
             </div>
         </div>
-        <nav class="sidebar-nav">
-            <a href="dashboard.html" class="nav-item active">
-                <img src="./Images/logo.png" alt=""> Tableau de Bord
-            </a>
-            <a href="actes.html" class="nav-item">
-                <img src="./Images/dossier.png" alt=""> Registre des Actes
-            </a>
-            <a href="formulaire.html" class="nav-item">
-                <img src="./Images/crayon.png" alt=""> Nouvel Acte
-            </a>
-            <a href="prioritaires.html" class="nav-item">
-                <img src="./Images/etoile.png" alt=""> Affaires Prioritaires
-            </a>
-        </nav>
+      <nav class="sidebar-nav">
+    <a href="dashboard.html" class="nav-item active">
+        <img src="./Images/logo.png" alt=""> Tableau de Bord
+    </a>
+    <a href="actes.html" class="nav-item">
+        <img src="./Images/dossier.png" alt=""> Registre des Actes
+    </a>
+    <a href="formulaire.html" class="nav-item">
+        <img src="./Images/crayon.png" alt=""> Nouvel Acte
+    </a>
+    <a href="prioritaires.html" class="nav-item">
+        <img src="./Images/etoile.png" alt=""> Affaires Prioritaires
+    </a>
+
+    <!-- menu visible seulement pour le commissaire -->
+    <div id="menuCommissaire" style="display:none;">
+        <div class="nav-separateur">ADMINISTRATION</div>
+        <a href="agents.html" class="nav-item">
+            <img src="./Images/etoile.png" alt=""> Gestion des Agents
+        </a>
+        <a href="logs.html" class="nav-item">
+            <img src="./Images/dossier.png" alt=""> Logs de Traçabilité
+        </a>
+    </div>
+</nav>
         <div class="sidebar-footer">
             <div class="user-info">
                 <div class="user-avatar" id="userInitiales">?</div>
@@ -93,6 +104,7 @@
                 </div>
             </div>
         </div>
+        <div class="bande-congo"></div>
 
         <div class="grille-tableaux">
             <div class="table-container">

@@ -14,14 +14,20 @@
 
 /* carte individuelle de statistique */
 .stat-card {
-    background: white;
+    background: #1e2a1e;
     border-radius: 8px;
     padding: 20px;
     display: flex;
     align-items: center;
     gap: 14px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-    border-left: 3px solid #009a44;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.stat-card .stat-info h3 {
+    color : white;
+}
+.stat-card .stat-info p {
+    color : rgba(255, 255, 255, 0.6);
 }
 
 /* icone dans la carte */
@@ -76,4 +82,15 @@
     .grille-tableaux {
         grid-template-columns: 1fr;
     }
+}.bande-congo {
+    height: 6px;
+    background: linear-gradient(90deg, 
+        #003d1a 0%,    
+        #005a27 25%,   
+        #8a7200 50%,   
+        #8b0000 75%,   
+        #5a0000 100%   
+    );
+    border-radius: 4px;
+    margin-bottom: 24px;
 }

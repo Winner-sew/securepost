@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurePost - Logs de Traçabilité</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="logs.css">
+</head>
+<body>
+<div class="app-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="./Images/logo.png" alt="logo">
+                <div>
+                    <h2>SecurePost</h2>
+                    <p>Commissariat PNR</p>
+                </div>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <img src="./Images/logo.png" alt=""> Tableau de Bord
+            </a>
+            <a href="actes.html" class="nav-item">
+                <img src="./Images/dossier.png" alt=""> Registre des Actes
+            </a>
+            <a href="formulaire.html" class="nav-item">
+                <img src="./Images/crayon.png" alt=""> Nouvel Acte
+            </a>
+            <a href="prioritaires.html" class="nav-item">
+                <img src="./Images/etoile.png" alt=""> Affaires Prioritaires
+            </a>
+            <div class="nav-separateur">ADMINISTRATION</div>
+            <a href="agents.html" class="nav-item">
+                <img src="./Images/etoile.png" alt=""> Gestion des Agents
+            </a>
+            <a href="logs.html" class="nav-item active">
+                <img src="./Images/dossier.png" alt=""> Logs de Traçabilité
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar" id="userInitiales">?</div>
+                <div>
+                    <div class="user-name" id="userName">-</div>
+                    <div class="user-role" id="userRole">-</div>
+                </div>
+            </div>
+            <button class="btn-deconnexion" onclick="seDeconnecter()">
+                Se déconnecter
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <div class="page-header">
+            <h1>Logs de Traçabilité</h1>
+            <p>Historique de toutes les actions effectuées dans le système</p>
+        </div>
+
+        <div class="table-container">
+            <div class="table-header">
+                <h2>50 dernières actions</h2>
+            </div>
+            <div id="listeLogs" style="padding:16px;">
+                <p class="logs-vide">Chargement...</p>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script src="logs.js"></script>
+</body>
+</html>

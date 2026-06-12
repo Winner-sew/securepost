@@ -1,10 +1,3 @@
-/* ============================================
-   SECUREPOST - Script Tableau de Bord
-   Auteur : Erwin Christopher Siassia
-   Date : Juin 2026
-   ============================================ */
-
-/* recuperation du token et des infos utilisateur */
 var token = localStorage.getItem('token');
 var user = {};
 try { user = JSON.parse(localStorage.getItem('user')) || {}; } catch(e) {}
@@ -17,6 +10,11 @@ if (user.prenom && user.nom) {
     document.getElementById('userInitiales').textContent = user.prenom[0] + user.nom[0];
     document.getElementById('userName').textContent = user.prenom + ' ' + user.nom;
     document.getElementById('userRole').textContent = user.role;
+}
+
+/* affichage menu commissaire seulement */
+if (user.role === 'commissaire') {
+    document.getElementById('menuCommissaire').style.display = 'block';
 }
 
 /* chargement des statistiques depuis l'API */
