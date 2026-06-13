@@ -39,7 +39,7 @@ var labelsType = {
 /* chargement des actes depuis l'API */
 async function chargerActes() {
     try {
-        var reponse = await fetch('http://localhost:3000/api/acts', {
+        var reponse = await fetch('https://securepost-api.onrender.com/api/acts', {
             headers: { 'Authorization': 'Bearer ' + token }
         });
         var data = await reponse.json();

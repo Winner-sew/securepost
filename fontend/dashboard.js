@@ -20,7 +20,7 @@ if (user.role === 'commissaire') {
    construit en SVG pur, sans librairie */
 async function chargerEvolution() {
     try {
-        var reponse = await fetch('http://localhost:3000/api/stats/evolution', {
+        var reponse = await fetch('https://securepost-api.onrender.com/api/stats/evolution', {
             headers: { 'Authorization': 'Bearer ' + token }
         });
         var data = await reponse.json();
@@ -75,7 +75,7 @@ async function chargerEvolution() {
 /* chargement des statistiques depuis l'API */
 async function chargerStats() {
     try {
-        var reponse = await fetch('http://localhost:3000/api/stats/criminality', {
+        var reponse = await fetch('https://securepost-api.onrender.com/api/stats/criminality', {
             headers: { 'Authorization': 'Bearer ' + token }
         });
         var data = await reponse.json();
@@ -135,7 +135,7 @@ document.getElementById('graphiqueTypes').innerHTML = htmlT;
 /* chargement des derniers actes */
 async function chargerActes() {
     try {
-        var reponse = await fetch('http://localhost:3000/api/acts', {
+        var reponse = await fetch('https://securepost-api.onrender.com/api/acts', {
             headers: { 'Authorization': 'Bearer ' + token }
         });
         var data = await reponse.json();

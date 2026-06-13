@@ -36,7 +36,7 @@ async function seConnecter() {
 
     try {
         /* appel API vers notre backend Node.js */
-        var reponse = await fetch('http://localhost:3000/api/auth/login', {
+        var reponse = await fetch('https://securepost-api.onrender.com/api/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: email, mot_de_passe: motDePasse })

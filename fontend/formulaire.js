@@ -47,7 +47,7 @@ async function soumettre() {
 
     try {
         /* envoi des donnees vers l'API */
-        var reponse = await fetch('http://localhost:3000/api/acts', {
+        var reponse = await fetch('https://securepost-api.onrender.com/api/acts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -22,7 +22,7 @@ if (user.role === 'commissaire') {
 /* chargement des infos du profil */
 async function chargerProfil() {
     try {
-        var reponse = await fetch('http://localhost:3000/api/users/me', {
+        var reponse = await fetch('https://securepost-api.onrender.com/api/users/me', {
             headers: { 'Authorization': 'Bearer ' + token }
         });
         var data = await reponse.json();
@@ -51,7 +51,7 @@ async function enregistrerProfil() {
     }
 
     try {
-        var reponse = await fetch('http://localhost:3000/api/users/me', {
+        var reponse = await fetch('https://securepost-api.onrender.com/api/users/me', {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

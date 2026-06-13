@@ -21,7 +21,7 @@ if (user.prenom && user.nom) {
 /* chargement des agents depuis la BDD */
 async function chargerAgents() {
     try {
-        var reponse = await fetch('http://localhost:3000/api/users', {
+        var reponse = await fetch('https://securepost-api.onrender.com/api/users', {
             headers: { 'Authorization': 'Bearer ' + token }
         });
         var data = await reponse.json();
@@ -78,7 +78,7 @@ async function ajouterAgent() {
     }
 
     try {
-        var reponse = await fetch('http://localhost:3000/api/users', {
+        var reponse = await fetch('https://securepost-api.onrender.com/api/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -122,7 +122,7 @@ async function supprimerAgent(id) {
     if (!confirm('Confirmer la désactivation de cet agent ?')) return;
 
     try {
-        var reponse = await fetch('http://localhost:3000/api/users/' + id + '/desactiver', {
+        var reponse = await fetch('https://securepost-api.onrender.com/api/users/' + id + '/desactiver', {
             method: 'PATCH',
             headers: { 'Authorization': 'Bearer ' + token }
         });

@@ -21,7 +21,7 @@ if (user.prenom && user.nom) {
 /* chargement des logs depuis l'API */
 async function chargerLogs() {
     try {
-        var reponse = await fetch('http://localhost:3000/api/stats/logs', {
+        var reponse = await fetch('https://securepost-api.onrender.com/api/stats/logs', {
             headers: { 'Authorization': 'Bearer ' + token }
         });
         var data = await reponse.json();
