@@ -140,22 +140,20 @@ function fermerModal() {
     document.getElementById('modal').classList.remove('actif');
 }
 
-/* epingler un acte dans les prioritaires */
 function epingler(id) {
     var prioritaires = JSON.parse(localStorage.getItem('prioritaires') || '[]');
     var acte = tousLesActes.find(function(a) { return a.id === id; });
     var dejaPinned = prioritaires.find(function(p) { return p.id === id; });
 
     if (dejaPinned) {
-        alert('Cet acte est deja dans vos affaires prioritaires !');
+        afficherToast('Cet acte est deja dans vos affaires prioritaires', 'erreur');
         return;
     }
 
     prioritaires.push(acte);
     localStorage.setItem('prioritaires', JSON.stringify(prioritaires));
-    alert('Acte ' + acte.numero_acte + ' epingle !');
+    afficherToast('Acte ' + acte.numero_acte + ' epingle avec succes', 'succes');
 }
-
 /* deconnexion */
 function seDeconnecter() {
     localStorage.removeItem('token');

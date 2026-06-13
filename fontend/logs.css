@@ -1,9 +1,3 @@
-/* ============================================
-   SECUREPOST - Styles Logs de Traçabilité
-   Auteur : Erwin Christopher Siassia
-   Date : Juin 2026
-   ============================================ */
-
 .log-item {
     background: white;
     border-radius: 8px;
@@ -13,22 +7,6 @@
     display: flex;
     align-items: center;
     gap: 16px;
-}
-
-.log-item.CREATION {
-    border-left-color: #009a44;
-}
-
-.log-item.MODIFICATION {
-    border-left-color: #f97316;
-}
-
-.log-item.CONSULTATION {
-    border-left-color: #1a56db;
-}
-
-.log-item.CONNEXION {
-    border-left-color: #8b0000;
 }
 
 .log-badge {

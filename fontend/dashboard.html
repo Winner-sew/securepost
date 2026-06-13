@@ -6,6 +6,7 @@
     <title>SecurePost - Tableau de Bord</title>
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="toast.css">
 </head>
 <body>
 <div class="app-layout">
@@ -33,6 +34,9 @@
     <a href="prioritaires.html" class="nav-item">
         <img src="./Images/etoile.png" alt=""> Affaires Prioritaires
     </a>
+    <a href="profil.html" class="nav-item">
+    <img src="./Images/crayon.png" alt=""> Mon Profil
+</a>
 
     <!-- menu visible seulement pour le commissaire -->
     <div id="menuCommissaire" style="display:none;">
@@ -124,23 +128,22 @@
                 </table>
             </div>
 
-            <div class="table-container">
-                <div class="table-header">
-                    <h2>Par Type d'Acte</h2>
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Type</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableauTypes">
-                        <tr><td colspan="2">Chargement...</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+     <div class="table-container">
+    <div class="table-header">
+        <h2>Par Type d'Acte</h2>
+    </div>
+    <div class="graphique-barres" id="graphiqueTypes">
+        <p>Chargement...</p>
+    </div>
+</div>
+<div class="table-container">
+    <div class="table-header">
+        <h2>Évolution des Actes — 30 derniers jours</h2>
+    </div>
+    <div class="evolution-container" id="evolutionContainer">
+        <p class="evolution-vide">Chargement...</p>
+    </div>
+</div>
 
         <div class="table-container">
             <div class="table-header">
@@ -166,7 +169,7 @@
 
     </main>
 </div>
-
+<script src="toast.js"></script>
 <script src="dashboard.js"></script>
 </body>
 </html>

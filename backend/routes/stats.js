@@ -89,5 +89,19 @@ router.get('/logs', verifierToken, async (req, res) => {
         res.status(500).json({ message: '❌ Erreur serveur' });
     }
 });
-
+router.get('/evolution', verifierToken, async (req, res) => {
+    try {
+        const result = await pool.query(`
+            SELECT TO_CHAR(date_creation, 'DD/MM') as jour, COUNT(*) as total
+            FROM acts
+            WHERE date_creation >= NOW() - INTERVAL '30 days'
+            GROUP BY jour, DATE(date_creation)
+            ORDER BY DATE(date_creation) ASC
+        `);
+        res.json(result.rows);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Erreur serveur' });
+    }
+});
 module.exports = router;
