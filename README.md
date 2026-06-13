@@ -76,3 +76,6 @@ Erwin Christopher Siassia - ECAM Pointe-Noire, Licence GIIA 2eme annee
 ## Projet academique
 
 Cahier des charges fourni dans le cadre d'un projet de Genie Informatique et Intelligence Artificielle - Juin 2026.
+## Vidéo de démonstration
+
+Lien vers la vidéo YouTube présentant le parcours complet d'un acte : https://youtu.be/TON_LIEN_ICI
